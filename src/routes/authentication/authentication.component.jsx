@@ -1,15 +1,16 @@
-import { 
-    // auth,
-    signInWithGooglePopup,
-    // signInWithGoogleRedirect,
-    createUserDocumentFromAuth} from "../../utils/firebase/firebase.component"
+// import { 
+//     // auth,
+//     signInWithGooglePopup,
+//     // signInWithGoogleRedirect,
+//     createUserDocumentFromAuth} from "../../utils/firebase/firebase.component"
 // import { useEffect } from "react"
 // // import { getRedirectResult } from "firebase/auth"
 // import { onAuthStateChanged } from "firebase/auth";
 import SignUpForm from "../../components/sign-up-form/sign-up-form.component"
+import SignInForm from "../../components/sign-in-form/sign-in-form.component"
+import "./authentication.styles.scss"
 
-
-const SignIn = () => {
+const Authentication = () => {
 
 
 
@@ -43,11 +44,6 @@ const SignIn = () => {
 
 
 
-    const logGoogleUser = async() => {
-        const {user} = await signInWithGooglePopup()
-        const userDocRef =  await createUserDocumentFromAuth(user) // createUserDocumentFromAuth() 是async方法，返回的userDocRef是promise
-
-    }
 
     //不能这样用
     //用这个signin方法和 signInWithGooglePopup有点区别，此时这个用户信息不打印在console，原因是当我们用这个sign in的时候， 页面跳转到一个新的页面，signin后回来就是重新启动整个application
@@ -61,17 +57,19 @@ const SignIn = () => {
 
 
     return(
-        <div>
-            <h1>sign in page</h1>
-
-            <button onClick={logGoogleUser}>Sign in with Google</button>
+        <div className="authentication-container">
+            {/* <h1>sign in page</h1> */}
+            <SignInForm/>
+            {/* <button onClick={logGoogleUser}>Sign in with Google</button> */}
             {/* <button onClick={logGoogleRedirectUser}>Sign in with Google Redirect</button> */}
             {/* <button onClick={signInWithGoogleRedirect}>Sign in with Google Redirect</button> */}
+           
             <SignUpForm/>
+     
 
 
         </div>
     )
 }
 
-export default SignIn
+export default Authentication

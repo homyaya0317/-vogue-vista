@@ -72,7 +72,6 @@ const SignUpForm = () => {
             <form onSubmit={handleSubmit}>
                 
                 <FormInput
-
                     label="Display name"
                     type="text"
                     required
@@ -109,7 +108,7 @@ const SignUpForm = () => {
                     value={confirmPassword}
                  />
 
-                <Button  type="submit">Sign Up</Button>
+                <Button   type="submit">Sign Up</Button>
 
             </form>
 
