@@ -1,9 +1,10 @@
 import FormInput from "../form-input/form-input.component"
 import Button from "../button/button.component"
 import { useState } from "react"
-import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth, updateDisplayName, signInWithGooglePopup, signInAuthWithEmailAndPassword } from "../../utils/firebase/firebase.component"
+import {createUserDocumentFromAuth, signInWithGooglePopup, signInAuthWithEmailAndPassword } from "../../utils/firebase/firebase.component"
 
 import "./sign-in-form.styles.scss"
+
 
 
 
@@ -21,6 +22,8 @@ const SignInForm = () => {
 
     const { email, password } = formFields //destructiing 
 
+   
+
     const resetFormFields = () => {
         setFormFields(defaultFormFields)
     }
@@ -28,16 +31,17 @@ const SignInForm = () => {
 
 
     const signInWithGoogle = async () => {
-        const { user } = await signInWithGooglePopup()
-        await createUserDocumentFromAuth(user) // createUserDocumentFromAuth() 是async方法，返回的userDocRef是promise
+         await signInWithGooglePopup()
+        
+         // createUserDocumentFromAuth() 是async方法，返回的userDocRef是promise
 
     }
 
     const handleSubmit = async (event) => {
         event.preventDefault()
         try {
-            const response = await signInAuthWithEmailAndPassword(email,password)
-            console.log(response);
+            const {user} = await signInAuthWithEmailAndPassword(email,password)
+
             resetFormFields()
 
         } catch (error) {
