@@ -17,6 +17,8 @@ const App = () => {
         <Route path="auth" element={<Authentication />} />  
       </Route>
 
+      <Route path="checkout" element={<CheckOut/>} />
+
 
     </Routes>
   )
