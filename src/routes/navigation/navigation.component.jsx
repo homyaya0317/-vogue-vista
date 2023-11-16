@@ -40,12 +40,8 @@ const Navigation = () => {
               <Link className="nav-link" to="/auth">
                 Sign in
               </Link>
-
           }
-
          <CartIcon/>
-
-      
         </div>
 
         {isCartOpen &&  <CartDropdown/>}
