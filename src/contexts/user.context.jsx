@@ -13,6 +13,12 @@ export const USER_ACTION_TYPES = {
     SET_CURRENT_USER :"SET_CURRENT_USER"
 }
 
+
+const INITIAL_STATE = {
+    currentUser:null
+}
+
+
 const userReducer = (state,action) => {
 
   
@@ -35,9 +41,6 @@ const userReducer = (state,action) => {
 
 
 
-const INITIAL_STATE = {
-    currentUser:null
-}
 
 
 //使得下面的children都有权限 获得currentUser 和setCurrentUser
@@ -51,7 +54,7 @@ export const UserProvider = ({children}) =>{
         dispatch(
 
             createAction(USER_ACTION_TYPES.SET_CURRENT_USER,user)
-            
+    
         )
     }
 

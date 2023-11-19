@@ -4,11 +4,41 @@ import Navigation from "./routes/navigation/navigation.component";
 import Authentication from "./routes/authentication/authentication.component";
 import Shop from "./routes/shop/shop.component";
 import Checkout from "./routes/checkout/checkout.component";
+import { onAuthStateChangedListener } from "./utils/firebase/firebase.component";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 
+
+import { createUserDocumentFromAuth } from "./utils/firebase/firebase.component";
+import { setCurrentUser } from "./store/user/user.action";
 
 
 
 const App = () => {
+
+  const dispatch = useDispatch()
+
+
+      
+  useEffect(()=>{
+
+    //onAuthStateChangedListener: firebase 提供的 自动检测state的变化
+    const unsubscribe =  onAuthStateChangedListener((user)=>{
+        
+            if(user){
+             createUserDocumentFromAuth(user) //这个方法会判断user有没有存在在数据库中，参看firebase component
+            }
+            dispatch(setCurrentUser(user))
+    })
+
+    return unsubscribe
+
+ },[])
+
+
+ 
+
+
 
   return (
     <Routes>
