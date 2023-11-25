@@ -33,8 +33,11 @@ export const selectCategoriesMap = createSelector(
     )
 
  
-    //第一个获取的categories object
-    //第二个获取的categories array
+  
+export const selectCategoriesIsLoading  = createSelector(
+    [selectCategoryReducer],
+    (categoriesSlice) => categoriesSlice.isLoading
+)
 
 
 

@@ -6,9 +6,11 @@ import './index.scss';
 import App from './App';
 
 import reportWebVitals from './reportWebVitals';
-import { CategoriesProvider } from './contexts/categories.context.jsx';
-import { CartProvider } from './contexts/cart.context';
+
+
 import {store} from "../src/store/store.js"
+import { PersistGate } from 'redux-persist/integration/react';
+import {persistor} from "../src/store/store.js"
 
 
 
@@ -17,15 +19,15 @@ root.render(
 
   <React.StrictMode>
     <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+
+     
     <BrowserRouter>
-    
-        
-          <CartProvider>
-          <App />
-          </CartProvider>
          
+          <App />
       
     </BrowserRouter>
+    </PersistGate>
     </Provider>
   </React.StrictMode>
 

@@ -1,11 +1,13 @@
 import { Outlet, Link } from "react-router-dom"
-import { Fragment, useContext } from "react"
-import { UseSelector, useSelector } from "react-redux/es/hooks/useSelector"
+import { Fragment } from "react"
+import { useSelector } from "react-redux/es/hooks/useSelector"
 import { ReactComponent as Logo } from "../../assets/086 crown.svg"
 import CartIcon from "../../components/cart-icon/cart-icon.component"
 import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component"
-// import { UserContext } from "../../contexts/user.context"
-import { CartContext } from "../../contexts/cart.context"
+
+
+import { selectIsCartOpen } from "../../store/cart/cart.selector"
+
 import { selectCurrentUser } from "../../store/user/user.selector"
 
 import {NavigationContainer,NavLinks,NavLink,LogoContainer} from "./navigation.styles"
@@ -22,8 +24,7 @@ const Navigation = () => {
 
   const currentUser = useSelector(selectCurrentUser)
 
-  const {isCartOpen} = useContext(CartContext)
-
+  const isCartOpen = useSelector(selectIsCartOpen)
 
 
   return (
