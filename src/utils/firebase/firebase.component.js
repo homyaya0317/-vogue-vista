@@ -101,43 +101,90 @@ export const getCategoriesAndDocuments = async () => {
 
 
 
-export const createUserDocumentFromAuth = async (userAuth) => {
+// export const createUserDocumentFromAuth = async (userAuth) => {
+  
 
-  if (!userAuth) return
-
-  const userDocRef = doc(db, "users", userAuth.uid)
+//   if (!userAuth) return
 
 
-  const userSnapShot = await getDoc(userDocRef)
+//   console.log(userAuth);
+
+  
+//   const userDocRef = doc(db, "users", userAuth.uid)
+
+
+//   const userSnapShot = await getDoc(userDocRef)
+
+//   //if user data does not exist
+//   if (!userSnapShot.exists()) {
+
+//     const { displayName, email } = userAuth
+  
+
+//     const createdAt = new Date()
+
+//     try {
+
+//       await setDoc(userDocRef, {
+//         displayName,
+//         email,
+//         createdAt
+//       })
+
+
+//     } catch (error) {
+
+//       console.log("error creating the user", error.message);
+//     }
+//   }
+
+  
+  
+
+//   return userSnapShot;
+
+
+
+// }
+
+
+export const createUserDocumentFromAuth = async (
+  userAuth,
+  additionalInformation = {}
+) => {
+  if (!userAuth) return;
+
+
+
+  const userDocRef = doc(db, 'users', userAuth.uid);
+
+  const userSnapshot = await getDoc(userDocRef);
 
   //if user data does not exist
-  if (!userSnapShot.exists()) {
-
-    const { displayName, email } = userAuth
-    const createdAt = new Date()
+  if (!userSnapshot.exists()) {
+    const { displayName, email } = userAuth;
+    const createdAt = new Date();
 
     try {
-
       await setDoc(userDocRef, {
         displayName,
         email,
-        createdAt
-      })
+        createdAt,
+        ...additionalInformation,
+      });
 
-
+      // Fetch the data again after creating the document
+      return await getDoc(userDocRef);
     } catch (error) {
-
-      console.log("error creating the user", error.message);
+      console.log('error creating the user', error);
     }
   }
 
+  return userSnapshot;
+};
 
-  return userDocRef;
 
 
-  //if user data exists
-  //return userDocRef  
-}
 
 export const updateDisplayName = async (user, displayName) => {
   try {
@@ -152,7 +199,8 @@ export const updateDisplayName = async (user, displayName) => {
 export const createAuthUserWithEmailAndPassword = async (email, password) => {
 
   if (!email || !password) return;
-
+  
+  
   return await createUserWithEmailAndPassword(auth, email, password)
 
 }
@@ -172,6 +220,25 @@ export const signOutUser = async () => { return await signOut(auth) }
 //onAuthStateChanged: firebase 提供的 自动检测auth 的state的变化
 export const onAuthStateChangedListener = (callback) =>
   onAuthStateChanged(auth, callback)
+
+export const getCurrentUser = () => {
+  return new Promise((resolve,reject)=>{
+    const unsubscribe = onAuthStateChanged(
+      auth,
+      (userAuth) => {
+        unsubscribe();
+        resolve(userAuth)
+      
+      },
+      reject
+    )
+         
+
+  })
+
+  
+}
+
 
 
 

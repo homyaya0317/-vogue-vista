@@ -8,9 +8,11 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 
-import {store} from "../src/store/store.js"
+import { store } from "../src/store/store.js"
 import { PersistGate } from 'redux-persist/integration/react';
-import {persistor} from "../src/store/store.js"
+import { persistor } from "../src/store/store.js"
+import { Elements } from '@stripe/react-stripe-js';
+import { stripePromise } from './utils/stripe/stripe.utils.js';
 
 
 
@@ -20,14 +22,13 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
+        <BrowserRouter>
+          <Elements  stripe={stripePromise}>
+            <App />
 
-     
-    <BrowserRouter>
-         
-          <App />
-      
-    </BrowserRouter>
-    </PersistGate>
+          </Elements>
+        </BrowserRouter>
+      </PersistGate>
     </Provider>
   </React.StrictMode>
 

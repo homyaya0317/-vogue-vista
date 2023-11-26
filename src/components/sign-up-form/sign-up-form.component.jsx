@@ -4,6 +4,8 @@ import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth, updateD
 import FormInput from "../form-input/form-input.component"
 import {SignUpContainer} from  "./sign-up-form.styles"
 import Button from "../button/button.component"
+import { useDispatch } from "react-redux"
+import { signUpStart } from "../../store/user/user.action"
 
 
 const defaultFormFields = {
@@ -20,7 +22,7 @@ const SignUpForm = () => {
 
     const { displayName, email, password, confirmPassword } = formFields //destructiing 
 
-   
+    const dispatch = useDispatch()
 
     const resetFormFields = () => {
         setFormFields(defaultFormFields)
@@ -36,11 +38,16 @@ const SignUpForm = () => {
         }
 
         try {
-            const { user } = await createAuthUserWithEmailAndPassword(email, password)
 
-            await updateDisplayName(user, displayName)
+           
+           
+            dispatch(signUpStart(email,password,displayName))
+           
+            // const { user } = await createAuthUserWithEmailAndPassword(email, password)
 
-            await createUserDocumentFromAuth(user, { displayName })
+            // await updateDisplayName(user, displayName)
+
+            // await createUserDocumentFromAuth(user, { displayName })
 
             resetFormFields()
 

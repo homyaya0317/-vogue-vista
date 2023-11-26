@@ -11,7 +11,9 @@ import { selectIsCartOpen } from "../../store/cart/cart.selector"
 import { selectCurrentUser } from "../../store/user/user.selector"
 
 import {NavigationContainer,NavLinks,NavLink,LogoContainer} from "./navigation.styles"
-import { signOutUser } from "../../utils/firebase/firebase.component"
+// import { signOutUser } from "../../utils/firebase/firebase.component"
+import { useDispatch } from "react-redux"
+import { signOutStart } from "../../store/user/user.action"
 
 
 
@@ -21,10 +23,15 @@ const Navigation = () => {
   // console.log(currentUser);
 
   // const currentUser = useSelector((state)=> state.user.currentUser)
+  const dispatch = useDispatch()
 
   const currentUser = useSelector(selectCurrentUser)
 
   const isCartOpen = useSelector(selectIsCartOpen)
+
+  const signOutUser = () => {
+    dispatch(signOutStart())
+  }
 
 
   return (

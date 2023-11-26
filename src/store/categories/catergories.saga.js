@@ -26,6 +26,8 @@ export function* fetchCategoriesAsync() {
 }
 
 
+// whenever the FETCH_CATEGORIES_START action is dispatched, fetchCategoriesAsync will be invoked.
+
 export function* onFetchcategories(){
     yield takeLatest(CATEGORIES_ACTION_TYPES.FETCH_CATEGORIES_START,fetchCategoriesAsync)
 
@@ -33,6 +35,5 @@ export function* onFetchcategories(){
 
 export  function* categoriesSaga(){
     yield all([call(onFetchcategories)])
-
 
 }

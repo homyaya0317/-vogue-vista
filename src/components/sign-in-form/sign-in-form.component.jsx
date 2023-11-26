@@ -4,6 +4,8 @@ import { useState } from "react"
 import {createUserDocumentFromAuth, signInWithGooglePopup, signInAuthWithEmailAndPassword } from "../../utils/firebase/firebase.component"
 
 import {SignInContainer,ButtonsContainer} from  "./sign-in-form.styles"
+import { useDispatch } from "react-redux"
+import { googleSignInStart,emailSigInStart } from "../../store/user/user.action"
 
 
 
@@ -17,10 +19,11 @@ const defaultFormFields = {
 
 const SignInForm = () => {
 
-
+    const dispatch = useDispatch()
     const [formFields, setFormFields] = useState(defaultFormFields)
 
     const { email, password } = formFields //destructiing 
+
 
    
 
@@ -31,7 +34,10 @@ const SignInForm = () => {
 
 
     const signInWithGoogle = async () => {
-         await signInWithGooglePopup()
+        //  await signInWithGooglePopup()
+        dispatch(googleSignInStart())
+
+
         
          // createUserDocumentFromAuth() 是async方法，返回的userDocRef是promise
 
@@ -40,7 +46,8 @@ const SignInForm = () => {
     const handleSubmit = async (event) => {
         event.preventDefault()
         try {
-            const {user} = await signInAuthWithEmailAndPassword(email,password)
+            // const {user} = await signInAuthWithEmailAndPassword(email,password)
+            dispatch(emailSigInStart(email,password))
 
             resetFormFields()
 

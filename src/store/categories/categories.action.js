@@ -17,19 +17,19 @@ export const fetchCategoriesFailed = (error) =>
             error)
 
 
-export const fetchCategoriesAsync = () => {
-    return  async (dispatch) => {
+// export const fetchCategoriesAsync = () => {
+//     return  async (dispatch) => {
    
-     dispatch(fetchCategoriesStart())
+//      dispatch(fetchCategoriesStart())
 
-    try{
-        const categoriesArray = await getCategoriesAndDocuments("categories")
-        dispatch(fetchCategoriesSuccess(categoriesArray))
+//     try{
+//         const categoriesArray = await getCategoriesAndDocuments("categories")
+//         dispatch(fetchCategoriesSuccess(categoriesArray))
 
-    }catch(error){
-        dispatch(fetchCategoriesFailed(error))
+//     }catch(error){
+//         dispatch(fetchCategoriesFailed(error))
 
-    }
+//     }
 
-}
-}
+// }
+// }
