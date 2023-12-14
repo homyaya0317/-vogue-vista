@@ -9,13 +9,7 @@ const HomePage = () => {
 
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    // const imgArr = [
-    //     "https://i.ibb.co/cvpntL1/hats.png",
-    //     "https://i.ibb.co/px2tCc3/jackets.png",
-    //     "https://i.ibb.co/0jqHpnp/sneakers.png",
-    //     "https://i.ibb.co/GCCdy8t/womens.png",
-    //     "https://i.ibb.co/R70vBrQ/men.png"
-    // ]
+  
     const imgArr = [
         "https://i.ibb.co/5L5sVgC/woman-homepage.png",
         "https://i.ibb.co/pWm2rgt/hats-homepage.png",
