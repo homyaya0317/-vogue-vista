@@ -7,7 +7,14 @@ import Counter from "../components/counter/counter-component";
 import { selectCartItems } from "../store/cart/cart.selector";
 import Button,{BUTTON_TYPE_CLASSES} from "../components/button/button.component"
 import { addItemToCart } from "../store/cart/cart.action";
-import "./product-description.styles.scss"
+import {
+  ProductDescriptionContainer,
+  ImageContainer,
+  Title,
+  Price,
+  Description,
+
+} from "./product-description.styles"
 
 
 const ProductDescription = () => {
@@ -43,20 +50,20 @@ const ProductDescription = () => {
   return (
 
     isLoading?<Spinner />:
-    <div className="ProductDescriptionContainer">
-        <div className="ImageContainer">
+    <ProductDescriptionContainer>
+        <ImageContainer>
         <img src={imageUrl} alt={name} width={800} height={800}/>
 
-        </div>
+        </ImageContainer>
       
-      <div className="DescriptionContainer">
-        <h2 className="Title">{name}</h2>
-        <p className="Price">{price}</p> 
+      <Description>
+        <Title>{name}</Title>
+        <Price>${price}</Price> 
         <Counter cartItem={cartItem} />
         <Button buttonType={BUTTON_TYPE_CLASSES.inverted} onClick= {addProductToCart}>Add to card</Button>
         <p className="Description">Description: {description}</p>   
-      </div>
-    </div>
+      </Description>
+    </ProductDescriptionContainer>
   );
 };
 

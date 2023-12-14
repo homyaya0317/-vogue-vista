@@ -1,6 +1,6 @@
 import React from "react"
-import classes from "./Confirm.module.css"
-import Backdrop from "../backdrop/Backdrop"
+
+import { ConfirmContainer,Text,Yes,No,ConfirmOuter } from "./confirm.styles"
 
 const Confirm = (props) => {
 
@@ -8,21 +8,23 @@ const Confirm = (props) => {
 
     return (
 
-        // <Backdrop 
-        // className={classes.ConfirmOuter} 
-        // onClick={(e)=>props.onCancel(e)}>
-            <div className={classes.Confirm} onClick={(e)=>props.onCancel(e)} >
-                <div className={classes.Text}>
+        
+            <ConfirmContainer  onClick={(e)=>props.onCancel(e)} >
+                <Text >
                     {props.confirmText}
-                </div>
+                </Text>
+
 
                 <div>
-                    <button className={classes.Yes} onClick={(e) => props.onYes(e)}>Yes</button>
-                    <button className={classes.No} onClick={(e) => props.onCancel(e)}>Cancel</button>
+                     <Yes  onClick={(e) => props.onYes(e)}>Yes</Yes>
+                    <No  onClick={(e) => props.onCancel(e)}>Cancel</No>
                 </div>
-            </div>
+               
+                  
+               
+            </ConfirmContainer>
 
-        // </Backdrop>
+    
 
     )
 }
