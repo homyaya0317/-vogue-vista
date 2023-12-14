@@ -10,7 +10,7 @@ const CartItem = ({ cartItem }) => {
             <ItemDetail>
                 <span>{name}</span>
                 <span>
-                    {quantity} x {price}
+                    {quantity} x ${price}
                 </span>
              
             </ItemDetail>

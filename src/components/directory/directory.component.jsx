@@ -5,32 +5,34 @@ const categories = [
     {
       "id": 1,
       "title": "hats",
-      "imageUrl": "https://i.ibb.co/cvpntL1/hats.png",
-      "route": "shop/hats"
+      "imageUrl":"https://i.ibb.co/vxRFWwT/hats.webp",
+      "route": "categories/hats"
     },
     {
       "id": 2,
       "title": "jackets",
-      "imageUrl": "https://i.ibb.co/px2tCc3/jackets.png",
-      "route": "shop/jackets"
+      "imageUrl":"https://i.ibb.co/djM1FzN/jackets.webp",
+
+      "route": "categories/jackets"
     },
     {
       "id": 3,
       "title": "sneakers",
-      "imageUrl": "https://i.ibb.co/0jqHpnp/sneakers.png",
-      "route": "shop/sneakers"
+      "imageUrl": "https://i.ibb.co/7KKrFX1/sneakers.jpg",
+
+      "route": "categories/sneakers"
     },
     {
       "id": 4,
       "title": "womens",
-      "imageUrl": "https://i.ibb.co/GCCdy8t/womens.png",
-      "route": "shop/womens"
+      "imageUrl": "https://i.ibb.co/v4gMFg8/women.webp",
+      "route": "categories/womens"
     },
     {
       "id": 5,
       "title": "mens",
-      "imageUrl": "https://i.ibb.co/R70vBrQ/men.png",
-      "route": "shop/mens"
+      "imageUrl": "https://i.ibb.co/ZzBjXJk/men.webp",
+      "route": "categories/mens"
     }
   ]
   

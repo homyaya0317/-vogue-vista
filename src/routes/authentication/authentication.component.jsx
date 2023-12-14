@@ -8,7 +8,8 @@
 // import { onAuthStateChanged } from "firebase/auth";
 import SignUpForm from "../../components/sign-up-form/sign-up-form.component"
 import SignInForm from "../../components/sign-in-form/sign-in-form.component"
-import {AuthenticationContainer} from "./authentication.styles"
+import { AuthenticationContainer } from "./authentication.styles"
+import { Fragment } from "react"
 
 const Authentication = () => {
 
@@ -38,7 +39,7 @@ const Authentication = () => {
     //         // User is signed out or authentication failed
     //       }
     //     });
-    
+
     //     return () => unsubscribe(); // Cleanup the listener when the component unmounts
     //   }, []);
 
@@ -56,19 +57,28 @@ const Authentication = () => {
 
 
 
-    return(
-        <AuthenticationContainer>
-            {/* <h1>sign in page</h1> */}
-            <SignInForm/>
-            {/* <button onClick={logGoogleUser}>Sign in with Google</button> */}
-            {/* <button onClick={logGoogleRedirectUser}>Sign in with Google Redirect</button> */}
-            {/* <button onClick={signInWithGoogleRedirect}>Sign in with Google Redirect</button> */}
-           
-            <SignUpForm/>
-     
+    return (
+
+        <Fragment>
+            <hr />
+            <AuthenticationContainer>
+                {/* <h1>sign in page</h1> */}
 
 
-        </AuthenticationContainer>
+                <SignInForm />
+                {/* <button onClick={logGoogleUser}>Sign in with Google</button> */}
+                {/* <button onClick={logGoogleRedirectUser}>Sign in with Google Redirect</button> */}
+                {/* <button onClick={signInWithGoogleRedirect}>Sign in with Google Redirect</button> */}
+
+                <SignUpForm />
+
+
+
+            </AuthenticationContainer>
+
+        </Fragment>
+
+
     )
 }
 

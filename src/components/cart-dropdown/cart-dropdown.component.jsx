@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux/es/hooks/useSelector"
 import { useNavigate } from "react-router-dom"
-import { selectCartItems } from "../../store/cart/cart.selector"
+import { selectCartItems,selectIsCartOpen } from "../../store/cart/cart.selector"
 
 import Button from "../button/button.component"
 import CartItem from "../cart-item/cart-item.component"
@@ -11,13 +11,15 @@ const CartDropdown = () => {
 
 
     const cartItems = useSelector(selectCartItems)
+ 
 
     const navigate = useNavigate()
+
 
     const goToCheckoutHandler = () => {
         navigate('/checkout')
     }
-
+   
 
     return (
         <CartDropdownContainer>
@@ -35,7 +37,7 @@ const CartDropdown = () => {
 
            
             </CartItems>
-            <Button onClick={goToCheckoutHandler}>Go TO CHECKOUT</Button>
+            <Button onClick={goToCheckoutHandler} >Go TO CHECKOUT</Button>
 
         </CartDropdownContainer>
     )

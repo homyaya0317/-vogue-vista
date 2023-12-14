@@ -1,18 +1,18 @@
-import {CheckoutContainer,CheckoutHeader,HeaderBlock,Total}  from "./checkout.styles"
+import { CheckoutContainer, CheckoutHeader, HeaderBlock, Total } from "./checkout.styles"
 import { UseSelector, useSelector } from "react-redux/es/hooks/useSelector"
 import CheckoutItem from "../../components/checkout-item/checkout-item.component"
-import { selectCartItems,selectCartTotal } from "../../store/cart/cart.selector"
+import { selectCartItems, selectCartTotal } from "../../store/cart/cart.selector"
 import PaymentForm from "../../components/payment-form/payment-form.component"
 
 
-const Checkout = () =>{
+const Checkout = () => {
 
-    
+
 
     const cartItems = useSelector(selectCartItems)
-    const  cartTotal = useSelector(selectCartTotal)
+    const cartTotal = useSelector(selectCartTotal)
 
-    return(
+    return (
         <CheckoutContainer>
             <CheckoutHeader>
                 <HeaderBlock>
@@ -24,7 +24,7 @@ const Checkout = () =>{
                 <HeaderBlock>
                     <span>Quantity</span>
                 </HeaderBlock>
-               
+
                 <HeaderBlock>
                     <span>Price</span>
                 </HeaderBlock>
@@ -34,18 +34,16 @@ const Checkout = () =>{
 
             </CheckoutHeader>
 
-            
-                {cartItems.map((cartItem)=>{
-                
-                    return (
-                        <CheckoutItem key={cartItem.id} cartItem={cartItem} />
-                    )
+            {cartItems.length === 0 ?  <p style={{ fontWeight: 'bold', marginTop: '20px',fontSize:"40px" }}>Your cart is empty</p> : (
+                cartItems.map((cartItem) => (
+                    <CheckoutItem key={cartItem.id} cartItem={cartItem} />
+                ))
+            )}
 
-                })}
-                
-                <Total>Total: ${cartTotal}</Total>
-                <PaymentForm/>
-           
+
+            <Total>Total: ${cartTotal}</Total>
+            <PaymentForm />
+
         </CheckoutContainer>
     )
 }

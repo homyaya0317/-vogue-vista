@@ -1,11 +1,11 @@
 import FormInput from "../form-input/form-input.component"
-import Button,{BUTTON_TYPE_CLASSES} from "../button/button.component"
-import { useState } from "react"
-import {createUserDocumentFromAuth, signInWithGooglePopup, signInAuthWithEmailAndPassword } from "../../utils/firebase/firebase.component"
-
-import {SignInContainer,ButtonsContainer} from  "./sign-in-form.styles"
+import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component"
+import { useState, useEffect } from "react"
+import { SignInContainer, ButtonsContainer } from "./sign-in-form.styles"
 import { useDispatch } from "react-redux"
-import { googleSignInStart,emailSigInStart } from "../../store/user/user.action"
+import { googleSignInStart, emailSigInStart } from "../../store/user/user.action"
+import { useNavigate } from "react-router-dom"
+import { useSelector } from "react-redux"
 
 
 
@@ -20,12 +20,13 @@ const defaultFormFields = {
 const SignInForm = () => {
 
     const dispatch = useDispatch()
+
+    const navigate = useNavigate()
     const [formFields, setFormFields] = useState(defaultFormFields)
 
     const { email, password } = formFields //destructiing 
+    
 
-
-   
 
     const resetFormFields = () => {
         setFormFields(defaultFormFields)
@@ -34,47 +35,43 @@ const SignInForm = () => {
 
 
     const signInWithGoogle = async () => {
-        //  await signInWithGooglePopup()
+
         dispatch(googleSignInStart())
-
-
-        
-         // createUserDocumentFromAuth() 是async方法，返回的userDocRef是promise
+        navigate("/")
 
     }
+
+
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-        try {
-            // const {user} = await signInAuthWithEmailAndPassword(email,password)
-            dispatch(emailSigInStart(email,password))
-
-            resetFormFields()
-
-        } catch (error) {
-            switch(error.code){
-                case "auth/invalid-login-credentials":
-                    alert("incorrect password for email or no user associated with this email")
-                    break
-                default:
-                    console.log(error);
-            }
-         
-
-        }
+       
+        dispatch(emailSigInStart(email, password));
+        resetFormFields()
+      
     }
+
+
+    const error = useSelector((state) => state.user.error);
+
+    useEffect(() => {
+      if (error) { 
+       
+       alert("auth/invalid-login-credentials");
+
+      }
+
+      
+    }, [error]);
+
+    
 
     const handleChange = (event) => {
 
-        //event.target 是整个元素对象，比如： <input  type="text" required onChange={handleChange} name="displayName" value={displayName}/>
-
-        const { name, value } = event.target //解构赋值 [name]就是指向属性名的变量这里就是 displayName, [属性名]:属性值
+        const { name, value } = event.target 
 
         setFormFields({ ...formFields, [name]: value })
     }
-
-
-    
 
 
     return (

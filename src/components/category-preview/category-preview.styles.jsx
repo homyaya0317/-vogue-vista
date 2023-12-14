@@ -5,7 +5,19 @@ import styled from "styled-components";
 export const CategoryPreviewContainer = styled.div`
     display: flex;
     flex-direction: column;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
+
+
+    h2{
+        width:140px;
+        text-align:center;
+        &:hover {
+       
+            background-color: green;
+            color:white;
+            
+        }
+    }
 
 `
 
@@ -14,6 +26,14 @@ export const Title = styled(Link)`
     font-size: 28px;
     margin-bottom: 25px;
     cursor: pointer;
+    &:hover {
+       
+        background-color: green;
+        color:white;
+        
+    }
+     
+   
 
 `
 

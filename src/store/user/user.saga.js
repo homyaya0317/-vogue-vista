@@ -17,7 +17,6 @@ import { getCurrentUser,
 
 export function* getSnapshotFromUserAuth(userAuth,additionalDetails){
 
-   
 
     try {
         const userSnapshot = yield call(
@@ -42,6 +41,7 @@ export function* signInWithGoogle(){
        
 
     }catch(error){
+        
         yield put(signInFailed(error))
 
     }
@@ -73,13 +73,20 @@ export function* signInWithEmail({payload:{email,password}}){
         )
 
         yield call(getSnapshotFromUserAuth,user)
-       
-
+    
     }catch(error){
+
+        
         yield put(signInFailed(error))
 
     }
 }
+
+
+
+
+
+  
 
 export function* signUp({payload:{email,password,displayName}}){
     try{
@@ -99,8 +106,6 @@ export function* signUp({payload:{email,password,displayName}}){
 
     }
 }
-
-
 
 
 export  function* signOut(){
@@ -164,4 +169,6 @@ export function* userSagas() {
         ])
 
 }
+
+
 

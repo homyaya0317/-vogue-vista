@@ -10,8 +10,9 @@ export const BaseButton  = styled.button`
     letter-spacing: 0.5px;
     line-height: 50px;
     padding: 0 35px 0 35px;
-    font-size: 15px;
+    font-size: 13px;
     background-color: black;
+    background-color: green;
     color: white;
     text-transform: uppercase;
     font-family: 'Open Sans Condensed';
@@ -35,6 +36,7 @@ export const BaseButton  = styled.button`
 export const GoogleSignInButton = styled(BaseButton)`
 
       background-color: #4285f4;
+    
       color: white;
   
       &:hover {
@@ -51,7 +53,7 @@ color: black;
 border: 1px solid black;
 
 &:hover {
-  background-color: black;
+  background-color: green;
   color: white;
   border: none;
 }

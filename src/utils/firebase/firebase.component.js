@@ -53,33 +53,33 @@ export const signInWithGoogleRedirect = () => signInWithRedirect(auth, provider)
 
 export const db = getFirestore()
 
-export const addCollectionAndDocuments = async (collectionKey,objectsToAdd) => {
+export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
 
-   const collectionRef =  collection(db,collectionKey);
+  const collectionRef = collection(db, collectionKey);
 
-   const batch = writeBatch(db)
+  const batch = writeBatch(db)
 
 
-   objectsToAdd.forEach((object) => {
-      
+  objectsToAdd.forEach((object) => {
+
     const docRef = doc(collectionRef, object.title.toLowerCase())
-    batch.set(docRef,object)
+    batch.set(docRef, object)
 
-   })
+  })
 
-   await batch.commit()
+  await batch.commit()
 
 }
 
 
 export const getCategoriesAndDocuments = async () => {
-  const collectionRef = collection(db,"categories")
+  const collectionRef = collection(db, "categories")
 
   const q = query(collectionRef)
 
   const querySnapshot = await getDocs(q)
 
-  return querySnapshot.docs.map(docSnapshot=>docSnapshot.data())
+  return querySnapshot.docs.map(docSnapshot => docSnapshot.data())
 
 
 
@@ -102,14 +102,14 @@ export const getCategoriesAndDocuments = async () => {
 
 
 // export const createUserDocumentFromAuth = async (userAuth) => {
-  
+
 
 //   if (!userAuth) return
 
 
 //   console.log(userAuth);
 
-  
+
 //   const userDocRef = doc(db, "users", userAuth.uid)
 
 
@@ -119,7 +119,7 @@ export const getCategoriesAndDocuments = async () => {
 //   if (!userSnapShot.exists()) {
 
 //     const { displayName, email } = userAuth
-  
+
 
 //     const createdAt = new Date()
 
@@ -138,8 +138,8 @@ export const getCategoriesAndDocuments = async () => {
 //     }
 //   }
 
-  
-  
+
+
 
 //   return userSnapShot;
 
@@ -154,12 +154,10 @@ export const createUserDocumentFromAuth = async (
 ) => {
   if (!userAuth) return;
 
-
-
   const userDocRef = doc(db, 'users', userAuth.uid);
 
   const userSnapshot = await getDoc(userDocRef);
-
+ 
   //if user data does not exist
   if (!userSnapshot.exists()) {
     const { displayName, email } = userAuth;
@@ -199,8 +197,8 @@ export const updateDisplayName = async (user, displayName) => {
 export const createAuthUserWithEmailAndPassword = async (email, password) => {
 
   if (!email || !password) return;
-  
-  
+
+
   return await createUserWithEmailAndPassword(auth, email, password)
 
 }
@@ -210,7 +208,10 @@ export const signInAuthWithEmailAndPassword = async (email, password) => {
 
   if (!email || !password) return;
 
-  return await signInWithEmailAndPassword(auth, email, password)
+  const userAuth = await signInWithEmailAndPassword(auth, email, password)
+
+  console.log(userAuth);
+  return userAuth
 
 }
 
@@ -222,21 +223,21 @@ export const onAuthStateChangedListener = (callback) =>
   onAuthStateChanged(auth, callback)
 
 export const getCurrentUser = () => {
-  return new Promise((resolve,reject)=>{
+  return new Promise((resolve, reject) => {
     const unsubscribe = onAuthStateChanged(
       auth,
       (userAuth) => {
         unsubscribe();
         resolve(userAuth)
-      
+
       },
       reject
     )
-         
+
 
   })
 
-  
+
 }
 
 
