@@ -60,7 +60,7 @@ const ProductDescription = () => {
         <Title>{name}</Title>
         <Price>${price}</Price> 
         <Counter cartItem={cartItem} />
-        <Button buttonType={BUTTON_TYPE_CLASSES.inverted} onClick= {addProductToCart}>Add to card</Button>
+        <Button buttonType={BUTTON_TYPE_CLASSES.inverted} onClick= {addProductToCart}>Add to cart</Button>
         <p className="Description">Description: {description}</p>   
       </Description>
     </ProductDescriptionContainer>

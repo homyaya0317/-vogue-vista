@@ -20,6 +20,13 @@ export const ProductCardContainer = styled.div`
       cursor: pointer;
     }
 
+    @media screen and (max-width: 800px) {
+       & button{
+        font-size:12px;
+       }
+
+    }
+
 
 
     
