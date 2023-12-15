@@ -73,10 +73,13 @@ export const NavLinks = styled.div`
         display: flex;
         justify-content: center;
         margin-bottom: 40px;
-        @media screen and (max-width: 800px) {
+    
+
+
+          @media screen and (max-width: 800px) {
             height: 60px;
-            padding-left: 380px; 
-            padding-right: 10px;
+            padding-left: 10px;  /* Adjust the left padding as needed */
+            padding-right: 10px;  /* Adjust the right padding as needed */
             margin-bottom: 20px;
           }
 
@@ -102,9 +105,8 @@ export const NavLinks = styled.div`
         }
 
         @media screen and (max-width: 800px) {
-            width: 80%;
+            width: 100%;  /* Adjust the width for full-width in smaller screens */
           }
-
        
         
         
@@ -121,7 +123,7 @@ export const NavLinks = styled.div`
     margin-left:250px;
     margin-top: 100px;
     @media screen and (max-width: 800px) {
-      flex-direction: row;
+      flex-direction: column;
       align-items: flex-start;
       margin-left: 10px; 
       margin-right: 10px;

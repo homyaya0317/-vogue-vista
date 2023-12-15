@@ -94,12 +94,6 @@ const onNavigateHandler = () => navigate("/categories")
         <HomepageContainer>
 
 
-            {/* <SideImageLeft onClick={onNavigateHandler}>
-                <Text><p>Check Out Our Featured Collection!</p></Text>
-                <BackgroundImage imageUrl="https://i.ibb.co/55z32tw/long-sleeve.png"/>
-            </SideImageLeft> */}
-
-
             <Outer>
 
                <ImgList>
@@ -130,11 +124,7 @@ const onNavigateHandler = () => navigate("/categories")
 
 
 
-            {/* <SideImageRight onClick={onNavigateHandler}>
-                <Text>Check Out Our Featured Collection!</Text>
-                <BackgroundImage imageUrl="https://i.ibb.co/KmSkMbH/striped-sweater.png"/>
-            </SideImageRight> */}
-
+         
         </HomepageContainer>
     )
 }

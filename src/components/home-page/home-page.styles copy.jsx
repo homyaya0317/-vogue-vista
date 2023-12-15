@@ -6,7 +6,13 @@ export const HomepageContainer = styled.div`
 
    display:flex;
    margin-bottom:60px;
+   
+   @media screen and (max-width :800px){
+        margin-right:1200px;
+        margin-bottom:10px;
   
+  }
+
     
 `
 
@@ -18,7 +24,11 @@ export const Outer = styled.div`
     margin: 30px auto;
     position: relative;
 
-   
+    @media screen and (max-width :800px){
+  
+      width: 200px;
+      
+    }
     
 `
 
@@ -51,7 +61,12 @@ export const ImgList = styled.ul`
           }
 
 
-
+          @media screen and (max-width: 800px) {
+            & img{
+              width:600px;
+              height:500px;
+            }
+          }
 
 `
 
@@ -81,14 +96,12 @@ export const Dot = styled.div`
             }
           }
 
+          @media screen and (max-width :800px){
+            left: 70px;
+      
+          }
+        
 
-          @media screen and (max-width: 800px) {
-            a {
-              width: 8px; /* Adjusted for smaller screens */
-              height: 8px; /* Adjusted for smaller screens */
-            }
-
-         
 
 `
   
