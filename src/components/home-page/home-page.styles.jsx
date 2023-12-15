@@ -4,23 +4,19 @@ import styled from "styled-components";
 
 export const HomepageContainer = styled.div`
 
-   display:flex;
-   margin-bottom:60px;
+      width: 100%;
+      height: 893px;
+      text-align: center;
+      margin: 30px auto;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
   
-    
 `
 
 
-export const Outer = styled.div`
 
-    width: 1400px;
-    height: 893px;
-    margin: 30px auto;
-    position: relative;
-
-   
-    
-`
 
 
 
@@ -49,6 +45,11 @@ export const ImgList = styled.ul`
             width:100%;
 
           }
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
 
 
 

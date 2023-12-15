@@ -1,5 +1,5 @@
 
-import {HomepageContainer,Outer,BackgroundImage,SideImageLeft,SideImageRight,Text,ImgList,Dot} from './home-page.styles'
+import {HomepageContainer,BackgroundImage,SideImageLeft,SideImageRight,Text,ImgList,Dot} from './home-page.styles'
 import { Link, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 
@@ -94,7 +94,7 @@ const onNavigateHandler = () => navigate("/categories")
         <HomepageContainer>
 
 
-            <Outer>
+            
 
                <ImgList>
                     {imgArr.map((img,index) => (
@@ -120,7 +120,7 @@ const onNavigateHandler = () => navigate("/categories")
 
                 </Dot>
 
-            </Outer>
+           
 
 
 

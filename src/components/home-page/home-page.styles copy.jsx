@@ -4,14 +4,14 @@ import styled from "styled-components";
 
 export const HomepageContainer = styled.div`
 
-   display:flex;
-   margin-bottom:60px;
+  //  display:flex;
+  //  margin-bottom:60px;
    
-   @media screen and (max-width :800px){
-        margin-right:1200px;
-        margin-bottom:10px;
-  
-  }
+  //  @media screen and (max-width :800px){
+  //       margin-right:1200px;
+  //       margin-bottom:10px;
+
+  // }
 
     
 `
@@ -25,7 +25,7 @@ export const Outer = styled.div`
     position: relative;
 
     @media screen and (max-width :800px){
-  
+
       width: 200px;
       
     }
