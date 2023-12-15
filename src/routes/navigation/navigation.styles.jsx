@@ -8,6 +8,13 @@ export const NavigationContainer = styled.div`
     display: flex;
     justify-content: space-between;
     margin-bottom: 25px;
+
+    @media screen and (max-width :800px){
+      height:60px;
+      padding:10px;
+      margin-bottom:20px
+
+  }
     `;
 
 
@@ -16,6 +23,11 @@ export const LogoContainer = styled(Link)`
        width: 70px;
        padding: 25px;
        font-size: 25px;
+       @media screen and (max-width :800px){
+            width:50px;
+            padding:0
+   
+       }
       
        
   `
@@ -27,6 +39,11 @@ export const NavLinks = styled.div`
         display: flex;
         align-items: center;
         justify-content: flex-end;
+        @media screen and (max-width :800px){
+            width:80%;
+
+        }
+        
   
   `
 
@@ -56,6 +73,13 @@ export const NavLinks = styled.div`
         display: flex;
         justify-content: center;
         margin-bottom: 40px;
+
+        @media screen and (max-width :800px){
+            height:60px;
+            padding-left:540px;
+            margin-bottom:20px
+      
+        }
   `
 
 
@@ -76,6 +100,12 @@ export const NavLinks = styled.div`
             color:white;
             font-weight:bold;
         }
+
+        @media screen and (max-width :800px){
+            width:80%;
+
+
+        }
         
   `
 
@@ -87,16 +117,22 @@ export const NavLinks = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+   
     margin-left:250px;
     margin-top: 100px
+
+    @media screen and (max-width: 800px) {
+      
+      
+ }
+
+    
 
   `
 
   export const InfoSection = styled.div`
 
      text-align: center;
-
 
         h2 {
         font-size: 25px;
@@ -107,6 +143,10 @@ export const NavLinks = styled.div`
         font-size: 19px;
         color: #666;
         }
+
+       
+        
+         
 
   
   `

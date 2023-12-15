@@ -94,10 +94,10 @@ const onNavigateHandler = () => navigate("/categories")
         <HomepageContainer>
 
 
-            <SideImageLeft onClick={onNavigateHandler}>
+            {/* <SideImageLeft onClick={onNavigateHandler}>
                 <Text><p>Check Out Our Featured Collection!</p></Text>
                 <BackgroundImage imageUrl="https://i.ibb.co/55z32tw/long-sleeve.png"/>
-            </SideImageLeft>
+            </SideImageLeft> */}
 
 
             <Outer>
@@ -106,7 +106,7 @@ const onNavigateHandler = () => navigate("/categories")
                     {imgArr.map((img,index) => (
                         <li key={index} className={index === currentIndex ? "current" : " "}>
                             <a href="javascript:;">
-                                <img src={img.imageUrl} alt={`Image ${img.id}`} width={850} height={593} onClick={()=>navigate(`${img.route}`)}/>
+                                <img src={img.imageUrl} alt={`Image ${img.id}`} width={1300} height={893} onClick={()=>navigate(`${img.route}`)}/>
                             </a>
                         </li>
 
@@ -130,10 +130,10 @@ const onNavigateHandler = () => navigate("/categories")
 
 
 
-            <SideImageRight onClick={onNavigateHandler}>
+            {/* <SideImageRight onClick={onNavigateHandler}>
                 <Text>Check Out Our Featured Collection!</Text>
                 <BackgroundImage imageUrl="https://i.ibb.co/KmSkMbH/striped-sweater.png"/>
-            </SideImageRight>
+            </SideImageRight> */}
 
         </HomepageContainer>
     )

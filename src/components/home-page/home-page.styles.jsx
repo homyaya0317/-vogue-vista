@@ -6,16 +6,34 @@ export const HomepageContainer = styled.div`
 
    display:flex;
    margin-bottom:60px;
+   
+   @media screen and (max-width :800px){
+   margin-right:1200px;
+   
+
+  }
+
     
 `
 
 
 export const Outer = styled.div`
 
-    width: 900px;
-    height: 593px;
+    width: 1400px;
+    height: 893px;
     margin: 30px auto;
     position: relative;
+
+    @media screen and (max-width :800px){
+  
+      width: 400px;
+      
+    }
+  
+    
+   
+
+
   
    
     
@@ -113,9 +131,11 @@ export const SideImageRight = styled.div`
 export const ImgList = styled.ul`
 
     height: 593px;
+    width:100%;
     list-style: none;
       
           li {
+           
             position: absolute;
             opacity: 0;
             transition: opacity 1s;
@@ -124,6 +144,19 @@ export const ImgList = styled.ul`
             &.current {
               z-index: 1;
               opacity: 1;
+            }
+          }
+
+          .img{
+            width:100%;
+
+          }
+
+
+          @media screen and (max-width: 800px) {
+            li {
+              width: 300px;  // Adjust the width for smaller images in media view
+              height: 400px;
             }
           }
 
@@ -154,6 +187,13 @@ export const Dot = styled.div`
               opacity: 1;
             }
           }
+
+          @media screen and (max-width :800px){
+            left: 70px;
+        
+      
+          }
+        
 
 
 `
