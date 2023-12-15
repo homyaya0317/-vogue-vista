@@ -35,14 +35,13 @@ export const LogoContainer = styled(Link)`
 
 
 export const NavLinks = styled.div`
-        width: 50%;
+        width: 70%;
         height: 100%;
         display: flex;
         align-items: center;
         justify-content: flex-end;
         @media screen and (max-width :800px){
-            width:80%;
-
+            width:100%;
         }
         
   
@@ -97,7 +96,6 @@ export const NavLinks = styled.div`
         font-size: 25px;
 
         &:hover {
-            // background-color: #f0f0f0;
             background-color: green;
             color:white;
             font-weight:bold;
@@ -120,14 +118,13 @@ export const NavLinks = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-   
     margin-left:250px;
     margin-top: 100px;
     @media screen and (max-width: 800px) {
-      flex-direction: column;
+      flex-direction: row;
       align-items: flex-start;
-      margin-left: 10px; /* Adjust the margin as needed */
-      margin-right: 10px; /* Adjust the margin as needed */
+      margin-left: 10px; 
+      margin-right: 10px;
       margin-top: 20px;
     }
 
@@ -153,10 +150,6 @@ export const NavLinks = styled.div`
         @media screen and (max-width: 800px) {
             text-align: left;
           }
-
-       
-        
-         
 
   
   `

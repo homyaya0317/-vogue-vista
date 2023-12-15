@@ -8,10 +8,9 @@ export const HomepageContainer = styled.div`
    margin-bottom:60px;
    
    @media screen and (max-width :800px){
-   margin-right:1200px;
-   margin-bottom:10px;
-   
-
+        margin-right:1200px;
+        margin-bottom:10px;
+  
   }
 
     
