@@ -1,6 +1,6 @@
 
-import {Outer,ImgList,Dot} from './home-page.styles'
-import { Link } from 'react-router-dom'
+import {HomepageContainer,Outer,BackgroundImage,SideImage,Text,ImgList,Dot} from './home-page.styles'
+import { Link, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 
 import "../../assets/homepage_images/homepage.png"
@@ -10,13 +10,56 @@ const HomePage = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
   
+    // const imgArr = [
+    //     "https://i.ibb.co/5L5sVgC/woman-homepage.png",
+    //     "https://i.ibb.co/pWm2rgt/hats-homepage.png",
+    //     "https://i.ibb.co/N7nKRK4/sneaker-homepage.png",
+    //     "https://i.ibb.co/Gs968jb/jackets-homepage.png",
+    //     "https://i.ibb.co/P1FTZWY/men-homepage.png"
+    // ]
+
+
     const imgArr = [
-        "https://i.ibb.co/5L5sVgC/woman-homepage.png",
-        "https://i.ibb.co/pWm2rgt/hats-homepage.png",
-        "https://i.ibb.co/N7nKRK4/sneaker-homepage.png",
-        "https://i.ibb.co/Gs968jb/jackets-homepage.png",
-        "https://i.ibb.co/P1FTZWY/men-homepage.png"
+        {
+            "id": 1,
+            "title": "hats",
+            "imageUrl":"https://i.ibb.co/pWm2rgt/hats-homepage.png",
+            "route": "categories/hats"
+          },
+          {
+            "id": 2,
+            "title": "jackets",
+            "imageUrl":"https://i.ibb.co/Gs968jb/jackets-homepage.png",
+      
+            "route": "categories/jackets"
+          },
+          {
+            "id": 3,
+            "title": "sneakers",
+            "imageUrl": "https://i.ibb.co/N7nKRK4/sneaker-homepage.png",
+      
+            "route": "categories/sneakers"
+          },
+          {
+            "id": 4,
+            "title": "womens",
+            "imageUrl": "https://i.ibb.co/5L5sVgC/woman-homepage.png",
+            "route": "categories/womens"
+          },
+          {
+            "id": 5,
+            "title": "mens",
+            "imageUrl": "https://i.ibb.co/P1FTZWY/men-homepage.png",
+            "route": "categories/mens"
+          }
+
     ]
+
+
+ 
+
+    
+
 
     
 
@@ -52,29 +95,35 @@ const HomePage = () => {
         changeImg(index)
     }
 
+ 
+
+const navigate = useNavigate()
+
+const onNavigateHandler = () => navigate("/categories")
 
 
     return (
-        <div>
+        <HomepageContainer>
 
 
+            <SideImage onClick={onNavigateHandler}>
+                <Text><p>Check Out Our Featured Collection!</p></Text>
+                <BackgroundImage imageUrl="https://i.ibb.co/55z32tw/long-sleeve.png"/>
+            </SideImage>
 
 
             <Outer>
 
-                <ImgList>
-                    {imgArr.map((img, index) => (
+               <ImgList>
+                    {imgArr.map((img,index) => (
                         <li key={index} className={index === currentIndex ? "current" : " "}>
                             <a href="javascript:;">
-                                <img src={img} alt={`Image ${index}`} width={800} height={593} />
+                                <img src={img.imageUrl} alt={`Image ${img.id}`} width={800} height={593} onClick={()=>navigate(`${img.route}`)}/>
                             </a>
                         </li>
 
                     ))}
                 </ImgList>
-
-
-             
 
                 <Dot>
 
@@ -91,7 +140,14 @@ const HomePage = () => {
 
             </Outer>
 
-        </div>
+
+
+            <SideImage onClick={onNavigateHandler}>
+                <Text>Check Out Our Featured Collection!</Text>
+                <BackgroundImage imageUrl="https://i.ibb.co/KmSkMbH/striped-sweater.png"/>
+            </SideImage>
+
+        </HomepageContainer>
     )
 }
 
