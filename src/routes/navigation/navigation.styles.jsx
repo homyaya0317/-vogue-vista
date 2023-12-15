@@ -15,6 +15,7 @@ export const NavigationContainer = styled.div`
       margin-bottom:20px
 
   }
+  
     `;
 
 
@@ -28,7 +29,7 @@ export const LogoContainer = styled(Link)`
             padding:0
    
        }
-      
+       
        
   `
 
@@ -73,13 +74,14 @@ export const NavLinks = styled.div`
         display: flex;
         justify-content: center;
         margin-bottom: 40px;
+        @media screen and (max-width: 800px) {
+            height: 60px;
+            padding-left: 380px; 
+            padding-right: 10px;
+            margin-bottom: 20px;
+          }
 
-        @media screen and (max-width :800px){
-            height:60px;
-            padding-left:540px;
-            margin-bottom:20px
-      
-        }
+       
   `
 
 
@@ -101,11 +103,12 @@ export const NavLinks = styled.div`
             font-weight:bold;
         }
 
-        @media screen and (max-width :800px){
-            width:80%;
+        @media screen and (max-width: 800px) {
+            width: 80%;
+          }
 
-
-        }
+       
+        
         
   `
 
@@ -119,13 +122,16 @@ export const NavLinks = styled.div`
     justify-content: space-between;
    
     margin-left:250px;
-    margin-top: 100px
-
+    margin-top: 100px;
     @media screen and (max-width: 800px) {
-      
-      
- }
+      flex-direction: column;
+      align-items: flex-start;
+      margin-left: 10px; /* Adjust the margin as needed */
+      margin-right: 10px; /* Adjust the margin as needed */
+      margin-top: 20px;
+    }
 
+    
     
 
   `
@@ -143,6 +149,10 @@ export const NavLinks = styled.div`
         font-size: 19px;
         color: #666;
         }
+
+        @media screen and (max-width: 800px) {
+            text-align: left;
+          }
 
        
         

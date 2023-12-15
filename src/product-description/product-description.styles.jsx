@@ -4,10 +4,24 @@ export const ProductDescriptionContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  @media screen and (max-width :800px){
+
+    width:100%;
+
+  }
+    
+
+
 `;
 
 export const ImageContainer = styled.div`
   margin-right: 200px;
+
+  @media screen and (max-width :800px){
+
+   
+  }
+    
 `;
 
 export const Title = styled.h2`
@@ -28,4 +42,17 @@ export const Price = styled.span`
 
 export const Description = styled.p`
   font-size: 25px;
+
+  @media screen and (max-width :800px){
+    & button{
+      font-size:12px;
+    }
+
+    & p{
+      font-size:22px;
+
+    }
+
+
+}
 `;

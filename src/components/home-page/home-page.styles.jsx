@@ -9,6 +9,7 @@ export const HomepageContainer = styled.div`
    
    @media screen and (max-width :800px){
    margin-right:1200px;
+   margin-bottom:10px;
    
 
   }
@@ -26,7 +27,7 @@ export const Outer = styled.div`
 
     @media screen and (max-width :800px){
   
-      width: 400px;
+      width: 200px;
       
     }
   
@@ -154,9 +155,9 @@ export const ImgList = styled.ul`
 
 
           @media screen and (max-width: 800px) {
-            li {
-              width: 300px;  // Adjust the width for smaller images in media view
-              height: 400px;
+            & img{
+              width:600px;
+              height:500px;
             }
           }
 
@@ -190,7 +191,6 @@ export const Dot = styled.div`
 
           @media screen and (max-width :800px){
             left: 70px;
-        
       
           }
         
