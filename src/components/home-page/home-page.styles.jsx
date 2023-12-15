@@ -56,7 +56,7 @@ export const Text = styled.div`
 
 export const SideImageLeft = styled.div`
     
-    background-color:green;
+ 
     margin-left:80px;
     margin-top: 100px;
     width: 270px;
@@ -83,7 +83,7 @@ export const SideImageLeft = styled.div`
 `
 export const SideImageRight = styled.div`
   
-    margin-right: 100px;
+    margin-left: 80px;
     margin-top: 100px;
     width: 270px;
     height: 400px;
