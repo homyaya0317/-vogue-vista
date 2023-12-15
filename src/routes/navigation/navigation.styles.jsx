@@ -49,7 +49,7 @@ export const NavLinks = styled.div`
   `
 
 
-  export const CurrentUser  = styled.div` 
+export const CurrentUser = styled.div` 
      color: green;
      font-weight:bold;
 
@@ -58,7 +58,7 @@ export const NavLinks = styled.div`
 
 
 
-  export const NavLink = styled(Link)`
+export const NavLink = styled(Link)`
       padding: 10px 15px;
       cursor: pointer;
       font-size: 20px;
@@ -67,39 +67,35 @@ export const NavLinks = styled.div`
 
 
 
-  export const CategoryNavigationContainer = styled.div`
+export const CategoryNavigationContainer = styled.div`
 
         height: 70px;
         width: 100%;
         display: flex;
         justify-content: center;
         margin-bottom: 40px;
-    
-      //     @media screen and (max-width: 800px) {
-      //       height: 60px;
-      //       padding-left: 10px;  
-      //       padding-right: 20px; 
-      //       margin-bottom: 20px;
-      //     }
-      @media screen and (max-width: 800px) {
-            flex-wrap: wrap;
-            height: auto;
-          }
+
+        @media screen and (max-width: 800px) {
+          flex-wrap: wrap;
+          justify-content: space-evenly;
+        }
 
        
   `
 
 
-  export const CategoryNavLink = styled(Link) `
+export const CategoryNavLink = styled(Link)`
         color: #333; 
-        width: 50%;
+        width: 10%; 
         text-decoration: none;
         padding: 10px;
         margin: 5px;
         border: none 
         border-radius: 5px;
-       text-align:center;
-        font-size: 25px;
+        text-align:center;
+        font-size: 30px;
+        // background-color:green;
+        // color:white;
 
         &:hover {
             background-color: green;
@@ -108,14 +104,16 @@ export const NavLinks = styled.div`
         }
 
         @media screen and (max-width: 800px) {
-            width: 100%;
-            margin-bottom: 5px; /* Add margin between rows */
-          }
+          width: 30%; 
+          margin-bottom: 1px;
+        }
+
+  
     
   `
 
 
-  export const InfoContainer = styled.div`
+export const InfoContainer = styled.div`
 
     width: 70%;
     height: 100%;
@@ -137,7 +135,7 @@ export const NavLinks = styled.div`
 
   `
 
-  export const InfoSection = styled.div`
+export const InfoSection = styled.div`
 
      text-align: center;
 
@@ -159,7 +157,7 @@ export const NavLinks = styled.div`
   `
 
 
- 
+
 
 
 

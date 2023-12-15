@@ -73,7 +73,7 @@ export const ImgList = styled.ul`
 export const Dot = styled.div`
 
 
-    position: absolute;
+          position: absolute;
           display: flex;
           justify-content: center;
           z-index: 3;

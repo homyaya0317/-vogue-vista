@@ -77,7 +77,7 @@ const Navigation = () => {
 
 
       <CategoryNavigationContainer>
-        <NavLinks>
+        
           <CategoryNavLink to="/">Home</CategoryNavLink>
           <CategoryNavLink to="/categories">Categories</CategoryNavLink>
           <CategoryNavLink to="/categories/hats">Hats</CategoryNavLink>
@@ -85,7 +85,7 @@ const Navigation = () => {
           <CategoryNavLink to="/categories/sneakers">Sneakers</CategoryNavLink>
           <CategoryNavLink to="/categories/mens">Mens</CategoryNavLink>
           <CategoryNavLink to="/categories/womens">Womens</CategoryNavLink>
-        </NavLinks>
+        
 
       </CategoryNavigationContainer>
       <Outlet />

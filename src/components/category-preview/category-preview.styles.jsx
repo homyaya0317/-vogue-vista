@@ -19,6 +19,12 @@ export const CategoryPreviewContainer = styled.div`
         }
     }
 
+    @media screen and (max-width: 800px) {
+        
+        margin-top:180px;
+    
+      }
+
 `
 
 export const Title = styled(Link)`

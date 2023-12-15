@@ -12,12 +12,15 @@ export const HomepageContainer = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
+
+      @media screen and (max-width: 800px) {
+        height:300px;
+        margin-bottom:10px;
+        margin-top:120px;
+
+      }
   
 `
-
-
-
-
 
 
 
@@ -51,10 +54,17 @@ export const ImgList = styled.ul`
           justify-content: center;
 
           @media screen and (max-width: 800px) {
+
+            height:300px;
+
+            margin-bottom:10px;
             & img{
               width:400px;
               height:300px;
             }
+
+
+
           }
 
 
@@ -95,6 +105,8 @@ export const Dot = styled.div`
               width: 8px; /* Adjusted for smaller screens */
               height: 8px; /* Adjusted for smaller screens */
             }
+
+          }
 
 
           @media screen and (max-width :800px){

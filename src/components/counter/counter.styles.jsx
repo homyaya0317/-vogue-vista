@@ -5,6 +5,10 @@ export const CounterContainer = styled.div`
   align-items: center;
   margin-bottom: 20px;
   margin-top: 20px;
+ 
+
+
+
 `;
 
 export const Plus = styled.button`
@@ -17,6 +21,16 @@ export const Plus = styled.button`
   height: 30px;
   border-radius: 50%;
   color: white;
+
+  @media screen and (max-width: 800px) {
+    width: 20px;
+    height: 20px;
+    
+  }
+
+
+
+  
 `;
 
 export const Minus = styled.button`
@@ -29,6 +43,12 @@ export const Minus = styled.button`
   height: 30px;
   border-radius: 50%;
   color: white;
+
+  @media screen and (max-width: 800px) {
+    width: 20px;
+    height: 20px;
+    
+  }
 `;
 
 export const Count = styled.span`

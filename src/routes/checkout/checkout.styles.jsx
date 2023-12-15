@@ -10,6 +10,7 @@ export const CheckoutContainer = styled.div`
     margin: 50px auto 0;
     @media screen and (max-width: 800px) {
         width: 90%;
+        margin-top:180px;
       }
 `
 
@@ -22,6 +23,10 @@ export const CheckoutHeader = styled.div`
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid darkgrey;
+    @media screen and (max-width: 800px) {
+      width:120%;
+     
+  }
 
 
 `
@@ -33,9 +38,6 @@ export const HeaderBlock = styled.div`
     width: 23%;
 
 
-  
-
-
     &:last-child {
       width: 8%;
 
@@ -43,9 +45,8 @@ export const HeaderBlock = styled.div`
     }
 
     @media screen and (max-width: 800px) {
-        width:22%;
-        
-       
+        width:10%;
+         
         &:last-child {
           width: 12%;
         }

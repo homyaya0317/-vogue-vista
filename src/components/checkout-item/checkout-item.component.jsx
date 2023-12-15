@@ -61,7 +61,7 @@ const CheckoutItem = ({ cartItem }) => {
                 <Counter cartItem={cartItem} />   
             </Quantity>
           
-            <BaseSpan>{price}</BaseSpan>
+            <BaseSpan> <p>${price}</p></BaseSpan>
             <RemoveButton onClick={showConfirmHandler}>&#10005;</RemoveButton>
 
         </CheckoutItemContainer>

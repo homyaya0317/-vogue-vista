@@ -60,7 +60,7 @@ const Authentication = () => {
     return (
 
         <Fragment>
-            <hr />
+          
             <AuthenticationContainer>
                 {/* <h1>sign in page</h1> */}
 

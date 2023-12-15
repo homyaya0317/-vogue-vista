@@ -30,9 +30,11 @@ export const BaseSpan = styled.span`
     width: 23%;
     @media screen and (max-width: 800px) {
         width: 22%;
-         
-        
-        
+
+        & p{
+            margin-left:20px;
+        }
+       
       }
 
 `
@@ -62,6 +64,12 @@ export const Value = styled.span`
 export const RemoveButton = styled.div`
     padding-left: 12px;
     cursor: pointer;
+    @media screen and (max-width: 800px) {
+        
+            margin-right:-10px;
+        
+       
+      }
 
 `
 
