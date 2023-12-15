@@ -1,5 +1,5 @@
 
-import {HomepageContainer,Outer,BackgroundImage,SideImage,Text,ImgList,Dot} from './home-page.styles'
+import {HomepageContainer,Outer,BackgroundImage,SideImageLeft,SideImageRight,Text,ImgList,Dot} from './home-page.styles'
 import { Link, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 
@@ -10,14 +10,7 @@ const HomePage = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
   
-    // const imgArr = [
-    //     "https://i.ibb.co/5L5sVgC/woman-homepage.png",
-    //     "https://i.ibb.co/pWm2rgt/hats-homepage.png",
-    //     "https://i.ibb.co/N7nKRK4/sneaker-homepage.png",
-    //     "https://i.ibb.co/Gs968jb/jackets-homepage.png",
-    //     "https://i.ibb.co/P1FTZWY/men-homepage.png"
-    // ]
-
+  
 
     const imgArr = [
         {
@@ -57,11 +50,6 @@ const HomePage = () => {
 
 
  
-
-    
-
-
-    
 
 
     useEffect(() => {
@@ -106,10 +94,10 @@ const onNavigateHandler = () => navigate("/categories")
         <HomepageContainer>
 
 
-            <SideImage onClick={onNavigateHandler}>
+            <SideImageLeft onClick={onNavigateHandler}>
                 <Text><p>Check Out Our Featured Collection!</p></Text>
                 <BackgroundImage imageUrl="https://i.ibb.co/55z32tw/long-sleeve.png"/>
-            </SideImage>
+            </SideImageLeft>
 
 
             <Outer>
@@ -118,7 +106,7 @@ const onNavigateHandler = () => navigate("/categories")
                     {imgArr.map((img,index) => (
                         <li key={index} className={index === currentIndex ? "current" : " "}>
                             <a href="javascript:;">
-                                <img src={img.imageUrl} alt={`Image ${img.id}`} width={800} height={593} onClick={()=>navigate(`${img.route}`)}/>
+                                <img src={img.imageUrl} alt={`Image ${img.id}`} width={850} height={593} onClick={()=>navigate(`${img.route}`)}/>
                             </a>
                         </li>
 
@@ -142,10 +130,10 @@ const onNavigateHandler = () => navigate("/categories")
 
 
 
-            <SideImage onClick={onNavigateHandler}>
+            <SideImageRight onClick={onNavigateHandler}>
                 <Text>Check Out Our Featured Collection!</Text>
                 <BackgroundImage imageUrl="https://i.ibb.co/KmSkMbH/striped-sweater.png"/>
-            </SideImage>
+            </SideImageRight>
 
         </HomepageContainer>
     )

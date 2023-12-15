@@ -16,6 +16,10 @@ export const ProductCardContainer = styled.div`
       margin-bottom: 5px;
     }
 
+    &:hover {
+      cursor: pointer;
+    }
+
 
 
     

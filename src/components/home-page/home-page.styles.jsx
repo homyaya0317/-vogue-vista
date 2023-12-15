@@ -5,16 +5,19 @@ import styled from "styled-components";
 export const HomepageContainer = styled.div`
 
    display:flex;
+   margin-bottom:60px;
     
 `
 
 
 export const Outer = styled.div`
 
-    width: 800px;
+    width: 900px;
     height: 593px;
-    margin: 40px auto;
+    margin: 30px auto;
     position: relative;
+  
+   
     
 `
 export const BackgroundImage = styled.div`
@@ -51,9 +54,36 @@ export const Text = styled.div`
 
 `
 
-export const SideImage = styled.div`
-    position: relative;
-    margin-left: 100px;
+export const SideImageLeft = styled.div`
+    
+    background-color:green;
+    margin-left:80px;
+    margin-top: 100px;
+    width: 270px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+
+    &:hover {
+        cursor: pointer;
+
+        ${BackgroundImage} {
+            transform: scale(1.1);
+            transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+        }
+
+        & ${Text} {
+
+            opacity: 0.9;
+            z-index:999;
+        }
+    }
+`
+export const SideImageRight = styled.div`
+  
+    margin-right: 100px;
     margin-top: 100px;
     width: 270px;
     height: 400px;
