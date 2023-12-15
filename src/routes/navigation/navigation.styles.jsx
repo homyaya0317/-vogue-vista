@@ -40,6 +40,7 @@ export const NavLinks = styled.div`
         display: flex;
         align-items: center;
         justify-content: flex-end;
+
         @media screen and (max-width :800px){
             width:100%;
         }
@@ -74,13 +75,15 @@ export const NavLinks = styled.div`
         justify-content: center;
         margin-bottom: 40px;
     
-
-
-          @media screen and (max-width: 800px) {
-            height: 60px;
-            padding-left: 10px;  /* Adjust the left padding as needed */
-            padding-right: 10px;  /* Adjust the right padding as needed */
-            margin-bottom: 20px;
+      //     @media screen and (max-width: 800px) {
+      //       height: 60px;
+      //       padding-left: 10px;  
+      //       padding-right: 20px; 
+      //       margin-bottom: 20px;
+      //     }
+      @media screen and (max-width: 800px) {
+            flex-wrap: wrap;
+            height: auto;
           }
 
        
@@ -105,11 +108,10 @@ export const NavLinks = styled.div`
         }
 
         @media screen and (max-width: 800px) {
-            width: 100%;  /* Adjust the width for full-width in smaller screens */
+            width: 100%;
+            margin-bottom: 5px; /* Add margin between rows */
           }
-       
-        
-        
+    
   `
 
 

@@ -50,6 +50,13 @@ export const ImgList = styled.ul`
           align-items: center;
           justify-content: center;
 
+          @media screen and (max-width: 800px) {
+            & img{
+              width:400px;
+              height:300px;
+            }
+          }
+
 
 
 
@@ -88,6 +95,13 @@ export const Dot = styled.div`
               width: 8px; /* Adjusted for smaller screens */
               height: 8px; /* Adjusted for smaller screens */
             }
+
+
+          @media screen and (max-width :800px){
+            left: 70px;
+      
+          }
+        
 
          
 
