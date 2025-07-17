@@ -1,0 +1,17 @@
+.navLinkCustom {
+  color: green !important; 
+  font-size: 1.5rem  !important;
+  margin: 0 0.5rem;
+  transition: color 0.3s, background-color 0.3s;
+  text-decoration: none;
+}
+
+.navLinkCustom:hover {
+  color: white !important;
+  background-color: green;
+  border-radius: 5px;
+  padding: 0.3rem 0.6rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+

@@ -95,7 +95,6 @@ const onNavigateHandler = () => navigate("/categories")
 
 
             
-
                <ImgList>
                     {imgArr.map((img,index) => (
                         <li key={index} className={index === currentIndex ? "current" : " "}>

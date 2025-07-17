@@ -50,18 +50,18 @@ const ProductDescription = () => {
   return (
 
     isLoading?<Spinner />:
-    <ProductDescriptionContainer>
-        <ImageContainer>
-        <img src={imageUrl} alt={name} width={800} height={800}/>
+    <ProductDescriptionContainer className="container">
+        {/* <ImageContainer> */}
+            <img src={imageUrl} alt={name} />
 
-        </ImageContainer>
+        {/* </ImageContainer> */}
       
       <Description>
         <Title>{name}</Title>
         <Price>${price}</Price> 
         <Counter cartItem={cartItem} />
         <Button buttonType={BUTTON_TYPE_CLASSES.inverted} onClick= {addProductToCart}>Add to cart</Button>
-        <p className="Description">Description: {description}</p>   
+        <p className="Description" style={{"margin-top":"1rem"}}>Description: {description}</p>   
       </Description>
     </ProductDescriptionContainer>
   );

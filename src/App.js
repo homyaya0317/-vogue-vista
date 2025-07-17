@@ -14,6 +14,8 @@ import { GlobalStyle } from './global.styles';
 import { createUserDocumentFromAuth } from "./utils/firebase/firebase.component";
 import { setCurrentUser } from "./store/user/user.action";
 
+import Footer from "./components/footer/footer.component.jsx";
+
 
 
 const App = () => {
@@ -32,8 +34,7 @@ useEffect(()=>{
     <>
 
     <GlobalStyle/>
-    <Routes>
-      
+    <Routes>  
       <Route path="/" element={<Navigation />}>
         <Route index element={<Home />}/>
         <Route path="categories/*" element={<Shop/>}/>
@@ -42,6 +43,7 @@ useEffect(()=>{
       </Route>
 
     </Routes>
+     <Footer /> 
     </>
   )
 }

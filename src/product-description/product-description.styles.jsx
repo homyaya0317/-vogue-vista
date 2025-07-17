@@ -1,29 +1,59 @@
 import styled from 'styled-components';
 
 export const ProductDescriptionContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: center;
 
-  @media screen and (max-width: 800px) {
-    flex-direction: column;
-    align-items: center;
-    margin-top:180px;
+
+  // @media screen and (max-width: 900px) {
+  //   flex-direction: column;
+  //   align-items: center;
+  //   margin-top:20px;
+  // }
+
+  display:grid;
+  grid-template-columns: 1fr;
+
+  img{
+  width: 100%;
+  object-fit: cover;
   }
-  
+
+
+  @media screen and (min-width: 800px) {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 4rem;
+    margin-top: 20px;
+  }
+
+
+
 
 `;
 
-export const ImageContainer = styled.div`
-  margin-right: 200px;
+// export const ImageContainer = styled.div`
 
-  @media screen and (max-width: 800px) {
-    margin-right: 0;
-    margin-bottom: 20px;
+
+//   @media screen and (max-width: 800px) {
+//     margin-right: 0;
+//     margin-bottom: 20px;
    
-  }
+//   }
+
+//   img{
+//     // width: 500px;
+//     // height: 500px;
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+//     border-radius: 0.5rem;
+//   }
+      
+//     }
+
     
-`;
+// `;
 
 export const Title = styled.h2`
   font-weight: bold;

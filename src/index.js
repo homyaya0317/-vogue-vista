@@ -13,6 +13,8 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { persistor } from "../src/store/store.js"
 import { Elements } from '@stripe/react-stripe-js';
 import { stripePromise } from './utils/stripe/stripe.utils.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'; 
 
 
 

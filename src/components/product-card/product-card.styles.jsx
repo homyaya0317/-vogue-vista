@@ -5,15 +5,16 @@ export const ProductCardContainer = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
-    height: 350px;
+    // height: 350px;
     align-items: center;
     position: relative;
 
     img {
       width: 100%;
-      height: 95%;
+      height: 90%;
       object-fit: cover;
       margin-bottom: 5px;
+   
     }
 
     &:hover {
@@ -27,10 +28,7 @@ export const ProductCardContainer = styled.div`
 
     }
 
-
-
-    
-
+  
 `
 
 
@@ -42,14 +40,18 @@ export const Footer = styled.div`
     justify-content: space-between;
     font-size: 18px;
     margin-bottom:20px;
+     margin-top: 20px;
+
+
 
 
     button {
       width: 80%;
       opacity: 0.7;
       position: absolute;
-      top: 255px;
+      top: 25px;
       display: none;
+     
     }
 
     &:hover {
@@ -70,6 +72,7 @@ export const Name = styled.span`
 
     width: 90%;
     margin-bottom: 15px;
+    
 
 
 `

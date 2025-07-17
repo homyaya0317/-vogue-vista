@@ -21,7 +21,7 @@ border: 1px solid black;
 background-color: white;
 top: 90px;
 right: 40px;
-z-index: 5;
+z-index: 9999;
 
  ${BaseButton},
  ${GoogleSignInButton},

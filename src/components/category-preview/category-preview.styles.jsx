@@ -5,7 +5,9 @@ import styled from "styled-components";
 export const CategoryPreviewContainer = styled.div`
     display: flex;
     flex-direction: column;
-    margin-bottom: 60px;
+    margin-bottom: 10px;
+
+    
 
 
     h2{
@@ -21,7 +23,7 @@ export const CategoryPreviewContainer = styled.div`
 
     @media screen and (max-width: 800px) {
         
-        margin-top:180px;
+        margin-top:20px;
     
       }
 
@@ -49,7 +51,8 @@ export const Preview = styled.div`
     column-gap: 20px;
     @media screen and (max-width :800px){
         grid-template-columns: 1fr 1fr;
-        grid-gap:15px
+        grid-gap:15px;
+        row-gap: 20px;
    }
 
 

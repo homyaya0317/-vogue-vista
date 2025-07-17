@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div>
 
-      <HomePage/>
+       <HomePage/>
 
        <Directory/>
        <Outlet/>
