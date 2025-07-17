@@ -13,13 +13,22 @@ export const ConfirmContainer = styled.div`
   background-color: rgb(237, 235, 235);
   display: flex;
   flex-flow: column;
-  justify-content: space-evenly;
+  // justify-content: space-evenly;
   align-items: center;
+  justify-content: center;
+  @media screen and (max-width:800px){
+       width:80%
+
+  }
 `;
 
 export const Text = styled.p`
-  font-size: 25px;
+  font-size: 2rem;
   font-weight: bold;
+    @media screen and (max-width:800px){
+     font-size:1.5rem;
+
+  }
 `;
 
 export const Button = css`
@@ -37,6 +46,11 @@ export const Yes = styled.button`
   border: none;
   margin-right: 50px;
   color: white;
+
+   @media screen and (max-width:800px){
+     font-size:1.5rem;
+
+  }
 `;
 
 export const No = styled.button`

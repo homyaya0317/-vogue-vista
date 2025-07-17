@@ -16,7 +16,7 @@ const Confirm = (props) => {
 
 
                 <div>
-                     <Yes  onClick={(e) => props.onYes(e)}>Yes</Yes>
+                    <Yes  onClick={(e) => props.onYes(e)}>Yes</Yes>
                     <No  onClick={(e) => props.onCancel(e)}>Cancel</No>
                 </div>
                
